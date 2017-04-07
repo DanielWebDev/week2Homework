@@ -1,0 +1,28 @@
+{
+  "name": "homework_week2",
+  "version": "1.0.0",
+  "description": "create a command line prompt that allows the user to CRUD with an array. data is not required to be stored. use an object to store the functions.",
+  "main": "ToDo.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DanielWebDev/week2Homework.git"
+  },
+  "keywords": [
+    "todo",
+    "ToDo",
+    "javascript",
+    "node"
+  ],
+  "author": "Daniel Kline",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DanielWebDev/week2Homework/issues"
+  },
+  "homepage": "https://github.com/DanielWebDev/week2Homework#readme",
+  "dependencies": {
+    "prompt": "^1.0.0"
+  }
+}
