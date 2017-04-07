@@ -11,8 +11,9 @@
 //	remove from list
 
 var q, err = false;
-var myArray = ['1','2',3,4,5];
+var ToDoArray = ['visit Italy'];
 var result = 0;
+var prompt = require('prompt');
 
 var ToDoList = {
 
@@ -20,41 +21,37 @@ var ToDoList = {
 
 	initFunction : function(result) {
 
-		console.log('select 1) Print ToDo, 2) Add ToDo, 3) Complete Todo');
+		console.log('\nselect an option\n1) Print ToDo\n2) Add ToDo\n3) Complete Todo\nq) Quit');
+		prompt.start();
 
-		this.promptUser(result);
+		prompt.get([{
+		    type: 'integer',
+		    required: true
+		  }], function (err, result) {
 
-		console.log('got to A; err: ' + err);
-
-	  	if (err) {
-	  		console.log('*** an error has occurred *** ' + err);
-	  		return;
-	  	} else {
-			switch (result.question) {
-				case 1:
-					console.log('1) selected, Print ToDo');
-					this.myFunction.displayList();
-				case 2:			
-					console.log('2) selected, Add ToDo');
-					myFunction.addItem();
-				case 3:
-					console.log('3) selected, Complete Todo');
-				case q:// quit
-					break;
-				default:
-					console.log('please enter a valid seletion');
-			}
-		}
-		//console.log('in initFunction, result:', result.question);
-		console.log('got to B');
-
+			  	if (err) {
+			  		console.log('*** an error has occurred *** ' + err);
+			  		return;
+			  	} else {
+					switch (result.question) {
+						case 1:
+							console.log('1) selected, Print ToDo');
+							ToDoList.displayList();
+						case 2:			
+							console.log('2) selected, Add ToDo');
+							ToDoList.addItem();
+						case 3:
+							console.log('3) selected, Complete Todo');
+						case q:// quit
+							break;
+						default:
+							console.log('please enter a valid seletion');
+					}
+				}
+		});
 	},
 
 	promptUser : function(result){
-
-		var prompt = require('prompt');// path not required as 
-
-		prompt.start();
 
 		prompt.get([{
 			name: 'question',
@@ -74,7 +71,7 @@ var ToDoList = {
 		console.log('Displaying contents ToDo list ...');
 		console.log('------------------------------------');
 
-		myArray.forEach(function(value){
+		ToDoArray.forEach(function(value){
 		  	console.log(value);
 		});
 
@@ -84,8 +81,8 @@ var ToDoList = {
 
 		console.log('please enter item to be added');
 
-		//this.promptUser(result);
-		myArray.pop(this.promptUser(result));
+		ToDoArray.pop(this.promptUser(result));
+		console.log('\n');
 
 	},
 
