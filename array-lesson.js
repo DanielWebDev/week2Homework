@@ -1,0 +1,10 @@
+var bucketList = ['Rappel into a cave','Take a falconry class','Learn to juggle'];
+var listItem = bucketList[3];
+var listLength = bucketList.length;
+bucketList.push('Skydive','Climb Mt. Everest');
+console.log(bucketList);
+bucketList.pop();
+console.log(bucketList);
+console.log(listItem);
+console.log(listLength);
+console.log(bucketList[0].length);
